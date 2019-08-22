@@ -1,0 +1,14 @@
+{
+  "name": "iot_king_tzeng",
+  "version": "1.0.0",
+  "description": "pratice & enjoy to be marker",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "King Tzeng",
+  "license": "ISC",
+  "dependencies": {
+    "johnny-five": "^1.3.0"
+  }
+}
