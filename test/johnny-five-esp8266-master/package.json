@@ -1,0 +1,17 @@
+{
+  "name": "homebot",
+  "version": "0.0.1",
+  "description": "Connecting Johnny-five (Arduino, Raspberry Pi etc) over WiFi without a wired connection to the PC.",
+  "repository": "https://github.com/anaganisk/johnny-five-esp8266",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sai Kiran Anagani",
+  "license": "MIT",
+  "dependencies": {
+    "firmata": "^0.14.1",
+    "johnny-five": "^0.10.1",
+    "udp-serial": "^0.2.0"
+  }
+}
