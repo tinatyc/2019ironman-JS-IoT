@@ -17,9 +17,17 @@ board.on('ready', function() {
       led.stop();
       led.off();
     },
+    stop: function() {
+      console.log('stop');
+      led.stop();
+    },
     blink: function() {
       console.log('LED閃～閃～');
       led.blink(500);
+    },
+    toggle: function() {
+      console.log('交換狀態');
+      led.toggle();
     },
   });
 });
