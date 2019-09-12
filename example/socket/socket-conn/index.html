@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="Tzeng,Ying-Chi" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <title>Socket-io connect IoT</title>
+  </head>
+  <body>
+    <div class="container pt-4">
+      <h3>LED On/Off</h3>
+      <div class="custom-control custom-switch">
+        <input type="checkbox" class="custom-control-input" id="switch" />
+        <label class="custom-control-label" for="switch"
+          >Toggle this switch element</label
+        >
+      </div>
+    </div>
+    <nav class="navbar navbar-light bg-light fixed-bottom">
+      Socket-io connect IoT
+      IoT沒那麼難！新手用JavaScript入門做自己的玩具　Tzeng,Ying-Chi
+    </nav>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+      var press = false;
+      var socket = io.connect();
+      $('#switch').click(function() {
+        sw = true;
+        sendToServer();
+      });
+      function sendToServer() {
+        socket.emit('swEvent', {
+          sw: sw,
+        });
+      }
+    </script>
+  </body>
+</html>
