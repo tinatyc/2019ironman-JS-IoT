@@ -11,11 +11,6 @@ sio.on('connection', function(socket) {
   socket.emit('eventName', {
     msg: 'Connection Ready！',
   });
-  // setInterval(() => {
-  //   socket.emit('eventName', {
-  //     msg: 'msg',
-  //   });
-  // }, 2000);
 
   socket.on('user', function(data) {
     console.log('user:' + data.text);
@@ -23,4 +18,10 @@ sio.on('connection', function(socket) {
       msg: '後端收到第' + data.count + '次！',
     });
   });
+
+  // setInterval(() => {
+  //   socket.emit('eventName', {
+  //     msg: 'msg',
+  //   });
+  // }, 2000);
 });
