@@ -10,18 +10,63 @@
     <meta name="description" content="" />
     <meta name="author" content="Tzeng,Ying-Chi" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <title>Socket.io Test</title>
   </head>
   <body>
+    <div class="container pt-4">
+      <h3>Socket.io Test</h3>
+      <form>
+        <div class="form-group">
+          <label for="textInput">輸入文字之後送出！</label>
+          <input
+            type="text"
+            class="form-control"
+            id="textInput"
+            placeholder="Enter Text"
+          />
+          <small id="" class="form-text text-muted"
+            >送出之後去終端機那邊看看～</small
+          >
+        </div>
+        <button type="button" class="btn btn-primary" id="sendMsg">
+          送送送送送～
+        </button>
+      </form>
+    </div>
+    <div id="resBackEnd" class="container pt-4"></div>
+    <nav class="navbar navbar-light bg-light fixed-bottom">
+      Socket.io Communication Test
+      IoT沒那麼難！新手用JavaScript入門做自己的玩具　Tzeng,Ying-Chi
+    </nav>
     <script src="/socket.io/socket.io.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script>
       var socket = io.connect();
-      socket.on('pi', function(data) {
+      var i = 1;
+
+      socket.on('eventName', function(data) {
+        $('#resBackEnd').append(
+          '<div class="alert alert-warning" role="alert">' +
+            data.msg +
+            '</div>',
+        );
         console.log(data.msg);
       });
-      setInterval(() => {
-        socket.emit('user', { text: 'send msg!' });
-      }, 1000);
+
+      $('#sendMsg').on('click', function() {
+        inputVal = $('#textInput').val();
+        count = i++;
+        socket.emit('user', {
+          text: inputVal,
+          count: count,
+        });
+      });
     </script>
   </body>
 </html>

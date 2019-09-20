@@ -8,11 +8,19 @@ var server = app.listen(3000);
 var sio = io.listen(server);
 
 sio.on('connection', function(socket) {
-  setInterval(() => {
-    socket.emit('pi', { msg: 'msg...' });
-  }, 2000);
+  socket.emit('eventName', {
+    msg: 'Connection Ready！',
+  });
+  // setInterval(() => {
+  //   socket.emit('eventName', {
+  //     msg: 'msg',
+  //   });
+  // }, 2000);
 
   socket.on('user', function(data) {
     console.log('user:' + data.text);
+    socket.emit('eventName', {
+      msg: '後端收到第' + data.count + '次！',
+    });
   });
 });

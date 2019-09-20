@@ -16,12 +16,6 @@ five.Board().on('ready', function() {
     '#8B008B',
   ];
 
-  /* 產生1~100的亂數，秒數調快一點讓LED有閃爍的效果 */
-  this.loop(50, () => {
-    randomNum = Math.floor(Math.random() * 100 + 1);
-    led.intensity(randomNum);
-  });
-
   // this.loop(1000, () => {
   //   for (let i = 0; i < 100; i++) {
   //     (i => {
@@ -33,20 +27,26 @@ five.Board().on('ready', function() {
   //   }
   // });
 
+  /* 產生1~100的亂數，秒數調快一點讓LED有閃爍的效果 */
+  this.loop(75, () => {
+    randomNum = Math.floor(Math.random() * 100 + 1);
+    led.intensity(randomNum);
+  });
+
   /*讓宣告的rainbow變數輪流跑*/
   this.loop(1000, () => {
     led.color(rainbow[i++]);
     if (i === rainbow.length) {
       i = 0;
     }
-    /*利用JS阻塞機制讓i累加，進而產生fadeIn效果*/
-    for (let i = 0; i < 100; i++) {
-      (i => {
-        setTimeout(function() {
-          console.log(i);
-          led.intensity(i);
-        }, (i + 1) * 5);
-      })(i);
-    }
+    // /*利用JS阻塞機制讓i累加，進而產生fadeIn效果*/
+    // for (let i = 0; i < 100; i++) {
+    //   (i => {
+    //     setTimeout(function() {
+    //       console.log(i);
+    //       led.intensity(i);
+    //     }, (i + 1) * 5);
+    //   })(i);
+    // }
   });
 });
