@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-tw">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -51,6 +50,7 @@
       var i = 1;
 
       socket.on('eventName', function(data) {
+        // Client 端接收到由 Server 端接發出的 eventName 事件
         $('#resBackEnd').append(
           '<div class="alert alert-warning" role="alert">' +
             data.msg +
@@ -63,6 +63,7 @@
         inputVal = $('#textInput').val();
         count = i++;
         socket.emit('user', {
+          // Client 端 送出 User 事件
           text: inputVal,
           count: count,
         });

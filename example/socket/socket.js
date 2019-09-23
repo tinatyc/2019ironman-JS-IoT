@@ -18,10 +18,4 @@ sio.on('connection', function(socket) {
       msg: '後端收到第' + data.count + '次！',
     });
   });
-
-  // setInterval(() => {
-  //   socket.emit('eventName', {
-  //     msg: 'msg',
-  //   });
-  // }, 2000);
 });
