@@ -7,13 +7,13 @@ var board = new five.Board();
 board.on('ready', function() {
   var matrix = new five.Led.Matrix({
     pins: {
-      data: 11,
-      clock: 10,
-      cs: 9,
+      data: 2,
+      clock: 3,
+      cs: 4,
     },
   });
 
-  matrix.on();
+  matrix.on().brightness(20);
 
   var msg = 'King Tzeng in IRON MAN!'.split('');
   // Display each letter for 1 second

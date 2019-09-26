@@ -135,7 +135,7 @@
         sw = true;
         sendToServer();
       });
-      function sendToServer(sw) {
+      function sendToServer() {
         socket.emit('swEvent', {
           sw: sw,
         });
