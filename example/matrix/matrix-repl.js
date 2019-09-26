@@ -15,32 +15,33 @@ board.on('ready', function() {
 
   this.repl.inject({
     on: function(i) {
-      console.log('matrix device: ' + i + '  on');
-      matrix.off(i);
+      console.log('第' + i + '台 device ：On');
       matrix.on(i);
     },
     off: function(i) {
-      console.log('matrix device: ' + i + ' is off');
+      console.log('第' + i + '台 device ：Off');
       matrix.off(i);
     },
     clear: function(i) {
-      console.log('matrix device: ' + i + ' is clear');
+      console.log('第' + i + '台 device ：清除狀態');
       matrix.clear(i);
     },
     brightness: function(i, per) {
-      console.log(i + ' matrix device,brightness:' + per + '%');
+      console.log('第' + i + '台, 亮度：' + per + ' %');
       matrix.brightness(i, per);
     },
     led: function(i, row, col, state) {
-      console.log('第' + i + '台\nrow:' + row + ',col:' + col + ',狀態：');
+      console.log('第' + i + '台');
+      console.log('row：' + row + ' col：' + col);
+      console.log('狀態：' + state);
       matrix.led(i, row, col, state);
     },
     row: function(i, row, num) {
-      console.log(i + ',' + row + ',' + num);
+      console.log('第' + i + '台\nrow：' + row + ',狀態：' + state);
       matrix.row(i, row, num);
     },
     column: function(i, col, num) {
-      console.log(i + ',' + col + ',' + num);
+      console.log('第' + i + '台\ncol：' + col + ',狀態：' + state);
       matrix.column(i, col, num);
     },
     draw: function(i, char) {
