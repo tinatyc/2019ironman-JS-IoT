@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="Tzeng,Ying-Chi" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <title>Matrix Test</title>
+    <style>
+      form {
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #dee2e6;
+        border-radius: 0.25rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container pt-4">
+      <h3>Matrix Test</h3>
+
+      <form>
+        <div class="form-row">
+          <div class="form-group col-2">
+            <label for="inputOn">ON</label>
+            <input
+              type="text"
+              class="form-control"
+              id="inputOn"
+              placeholder=""
+            />
+            <small id="" class="form-text text-muted">打開 Matrix</small>
+            <button type="button" class="btn btn-primary btn-sm" id="sendOn">
+              Start On
+            </button>
+          </div>
+          <div class="form-group col-2">
+            <label for="inputOff">OFF</label>
+            <input
+              type="text"
+              class="form-control"
+              id="inputOff"
+              placeholder=""
+            />
+            <small id="" class="form-text text-muted">關閉 Matrix</small>
+            <button type="button" class="btn btn-primary btn-sm" id="sendOff">
+              Start Off
+            </button>
+          </div>
+          <div class="form-group col-2">
+            <label for="inputClear">Clear</label>
+            <input
+              type="text"
+              class="form-control"
+              id="inputClear"
+              placeholder=""
+            />
+            <small id="" class="form-text text-muted">清除 Matrix狀態</small>
+            <button type="button" class="btn btn-primary btn-sm" id="sendClear">
+              Start Clear
+            </button>
+          </div>
+        </div>
+      </form>
+      <form>
+        <h6>設定亮度 Brightness</h6>
+        <div class="form-row">
+          <div class="form-group col-2">
+            <label for="inputBI">第幾部</label>
+            <input
+              type="text"
+              class="form-control"
+              id="inputBI"
+              placeholder=""
+            />
+            <!-- <small id="" class="form-text text-muted">第幾部</small> -->
+          </div>
+          <div class="form-group col-2">
+            <label for="inputBPer">%</label>
+            <input
+              type="text"
+              class="form-control"
+              id="inputBPer"
+              placeholder=""
+            />
+            <small id="" class="form-text text-muted">亮度百分比</small>
+          </div>
+        </div>
+        <button
+          type="button"
+          class="btn btn-primary btn-sm"
+          id="sendBrightness"
+        >
+          Setting Brightness
+        </button>
+      </form>
+      <form>
+        <h6>設定 led</h6>
+        <div class="form-row">
+          <div class="form-group col-2">
+            <label for="inputLedI">第幾部</label>
+            <input
+              type="text"
+              class="form-control"
+              id="inputLedI"
+              placeholder=""
+            />
+            <!-- <small id="" class="form-text text-muted">第幾部</small> -->
+          </div>
+          <div class="form-group col-2">
+            <label for="inputLedRow">Row</label>
+            <input
+              type="text"
+              class="form-control"
+              id="inputLedRow"
+              placeholder=""
+            />
+            <!-- <small id="" class="form-text text-muted">亮度百分比</small> -->
+          </div>
+          <div class="form-group col-2">
+            <label for="inputLedCol">column</label>
+            <input
+              type="text"
+              class="form-control"
+              id="inputLedCol"
+              placeholder=""
+            />
+            <!-- <small id="" class="form-text text-muted">亮度百分比</small> -->
+          </div>
+          <div class="form-group col-2">
+            <label for="inputLedSta">state</label>
+            <input
+              type="text"
+              class="form-control"
+              id="inputLedSta"
+              placeholder=""
+            />
+            <small id="" class="form-text text-muted">0:滅 / 1:亮</small>
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary btn-sm" id="sendLed">
+          Setting Led
+        </button>
+      </form>
+      <form>
+        <h6>設定 row</h6>
+        <div class="form-row">
+          <div class="form-group col-2">
+            <label for="inputRowI">第幾部</label>
+            <input
+              type="text"
+              class="form-control"
+              id="inputRowI"
+              placeholder=""
+            />
+            <!-- <small id="" class="form-text text-muted">第幾部</small> -->
+          </div>
+          <div class="form-group col-2">
+            <label for="inputRow">Row</label>
+            <input
+              type="text"
+              class="form-control"
+              id="inputRow"
+              placeholder=""
+            />
+            <!-- <small id="" class="form-text text-muted">亮度百分比</small> -->
+          </div>
+          <div class="form-group col-2">
+            <label for="inputRowNum">Num</label>
+            <input
+              type="text"
+              class="form-control"
+              id="inputRowNum"
+              placeholder=""
+            />
+            <small id="" class="form-text text-muted">0 ~ 255</small>
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary btn-sm" id="sendRow">
+          Setting Row
+        </button>
+      </form>
+      <form>
+        <h6>設定 column</h6>
+        <div class="form-row">
+          <div class="form-group col-2">
+            <label for="inputColI">第幾部</label>
+            <input
+              type="text"
+              class="form-control"
+              id="inputColI"
+              placeholder=""
+            />
+            <!-- <small id="" class="form-text text-muted">第幾部</small> -->
+          </div>
+          <div class="form-group col-2">
+            <label for="inputCol">Col</label>
+            <input
+              type="text"
+              class="form-control"
+              id="inputCol"
+              placeholder=""
+            />
+            <!-- <small id="" class="form-text text-muted">亮度百分比</small> -->
+          </div>
+          <div class="form-group col-2">
+            <label for="inputColNum">Num</label>
+            <input
+              type="text"
+              class="form-control"
+              id="inputColNum"
+              placeholder=""
+            />
+            <small id="" class="form-text text-muted">0 ~ 255</small>
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary btn-sm" id="sendCol">
+          Setting Column
+        </button>
+      </form>
+      <form>
+        <h6>顯示字元</h6>
+        <div class="form-row">
+          <div class="form-group col-2">
+            <label for="inputDrawI">第幾部</label>
+            <input
+              type="text"
+              class="form-control"
+              id="inputDrawI"
+              placeholder=""
+            />
+            <!-- <small id="" class="form-text text-muted">第幾部</small> -->
+          </div>
+          <div class="form-group col-2">
+            <label for="inputC">Char</label>
+            <input
+              type="text"
+              class="form-control"
+              id="inputC"
+              placeholder=""
+            />
+            <!-- <small id="" class="form-text text-muted">亮度百分比</small> -->
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary btn-sm" id="sendDraw">
+          Setting
+        </button>
+      </form>
+    </div>
+    <div id="resBackEnd" class="container pt-4"></div>
+    <nav class="navbar navbar-light bg-light fixed-bottom">
+      IoT沒那麼難！新手用JavaScript入門做自己的玩具 系列文　Tzeng,Ying-Chi
+    </nav>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
