@@ -1,49 +1,96 @@
-// input
-const inputOn = $('#inputOn').val();
-const inputOff = $('#inputOff').val();
-const inputClear = $('#inputClear').val();
-const inputBI = $('#inputBI').val();
-const inputBPer = $('#inputBPer').val();
-const inputLedI = $('#inputLedI').val();
-const inputLedRow = $('#inputLedRow').val();
-const inputLedCol = $('#inputLedCol').val();
-const inputLedSta = $('#inputLedSta').val();
-const inputRowI = $('#inputRowI').val();
-const inputRow = $('#inputRow').val();
-const inputRowNum = $('#inputRowNum').val();
-const inputColI = $('#inputColI').val();
-const inputCol = $('#inputCol').val();
-const inputColNum = $('#inputColNum').val();
-const inputDrawI = $('#inputDrawI').val();
-const inputC = $('#inputC').val();
-
-// btn
-const sendOn = $('#sendOn');
-const sendOff = $('#sendOff');
-const sendClear = $('#sendClear');
-const sendBrightness = $('#sendBrightness');
-const sendLed = $('#sendLed');
-const sendRow = $('#sendRow');
-const sendCol = $('#sendCol');
-const sendDraw = $('#sendDraw');
-
 var socket = io.connect();
-// var i = 1;
 
-socket.on('eventName', function(data) {
-  // Client 端接收到由 Server 端接發出的 eventName 事件
-  $('#resBackEnd').append(
-    '<div class="alert alert-warning" role="alert">' + data.msg + '</div>',
-  );
-  console.log(data.msg);
-});
-
-$('#sendMsg').on('click', function() {
-  inputVal = $('#textInput').val();
-  count = i++;
-  socket.emit('user', {
-    // Client 端 送出 User 事件
-    text: inputVal,
-    count: count,
+$('#sendOn').click(function() {
+  getVal();
+  console.log(inputOn);
+  socket.emit('mxOn', {
+    index: inputOn,
   });
 });
+$('#sendOff').click(function() {
+  getVal();
+  console.log(inputOff);
+  socket.emit('mxOff', {
+    index: inputOff,
+  });
+});
+$('#sendClear').click(function() {
+  getVal();
+  console.log(inputClear);
+  socket.emit('mxClear', {
+    index: inputClear,
+  });
+});
+
+// Brightness
+$('#sendBrightness').click(function() {
+  getVal();
+  console.log(inputBI, inputBPer);
+  socket.emit('mxBrightness', {
+    index: inputBI,
+    percent: inputBPer,
+  });
+});
+
+// Led
+$('#sendLed').click(function() {
+  getVal();
+  console.log(inputLedI, inputLedRow, inputLedCol, inputLedSta);
+  socket.emit('mxLed', {
+    index: inputLedI,
+    row: inputLedRow,
+    col: inputLedCol,
+    state: inputLedSta,
+  });
+});
+
+//row col
+$('#sendRow').click(function() {
+  getVal();
+  console.log(inputRowI, inputRow, inputRowNum);
+  socket.emit('mxRow', {
+    index: inputRowI,
+    row: inputRow,
+    number: inputRowNum,
+  });
+});
+$('#sendCol').click(function() {
+  getVal();
+  console.log(inputColI, inputCol, inputColNum);
+  socket.emit('mxCol', {
+    index: inputColI,
+    col: inputCol,
+    number: inputColNum,
+  });
+});
+
+// draw
+$('#sendDraw').click(function() {
+  getVal();
+  console.log(inputDrawI, inputC);
+  socket.emit('mxDraw', {
+    index: inputDrawI,
+    char: inputC,
+  });
+});
+
+function getVal() {
+  // input
+  inputOn = $('#inputOn').val();
+  inputOff = $('#inputOff').val();
+  inputClear = $('#inputClear').val();
+  inputBI = $('#inputBI').val();
+  inputBPer = $('#inputBPer').val();
+  inputLedI = $('#inputLedI').val();
+  inputLedRow = $('#inputLedRow').val();
+  inputLedCol = $('#inputLedCol').val();
+  inputLedSta = $('#inputLedSta').val();
+  inputRowI = $('#inputRowI').val();
+  inputRow = $('#inputRow').val();
+  inputRowNum = $('#inputRowNum').val();
+  inputColI = $('#inputColI').val();
+  inputCol = $('#inputCol').val();
+  inputColNum = $('#inputColNum').val();
+  inputDrawI = $('#inputDrawI').val();
+  inputC = $('#inputC').val();
+}

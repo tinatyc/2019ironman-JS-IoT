@@ -1,6 +1,18 @@
+var io = require('socket.io');
+var express = require('express');
 var five = require('johnny-five');
-var board = new five.Board();
 
+var board = new five.Board();
+var app = express();
+
+app.use(express.static('matrix-func'));
+var server = app.listen(3000, function() {
+  console.log('connected!');
+});
+
+var sio = io(server);
+
+// johnny-five event when johnny init ready
 board.on('ready', function() {
   var matrix = new five.Led.Matrix({
     pins: {
@@ -10,31 +22,39 @@ board.on('ready', function() {
     },
     devices: 2,
   });
-  var deviceNum = [0, 1];
-  var i = 0;
-  var myTeacher = 'The BestTeacher ->Amos  ^^  '.split('');
-
-  matrix
-    .clear()
-    .on()
-    .brightness(20);
-
-  function next(i) {
-    char = myTeacher.shift();
-    matrix.draw(i, char);
-    console.log(i, char);
-    myTeacher.push(char);
-    // console.log(c);
-    console.log(myTeacher);
-    // console.log(myTeacher.shift());
-  }
-
-  this.loop(1000, () => {
-    if (i === deviceNum.length) {
-      i = 0;
-    }
-    next(i);
-    deviceNum[i++];
-    // console.log(i);
+  // socket連線成功時，開始偵聽前端的 swEvent 事件
+  sio.on('connection', function(socket) {
+    socket.on('mxOn', function(data) {
+      console.log(data);
+      matrix.on(data.index);
+    });
+    socket.on('mxOff', function(data) {
+      console.log(data);
+      matrix.off(data.index);
+    });
+    socket.on('mxClear', function(data) {
+      console.log(data);
+      matrix.clear(data.index);
+    });
+    socket.on('mxBrightness', function(data) {
+      console.log(data);
+      matrix.brightness(data.index, data.per);
+    });
+    socket.on('mxLed', function(data) {
+      console.log(data);
+      matrix.led(data.index, data.row, data.col, data.state);
+    });
+    socket.on('mxRow', function(data) {
+      console.log(data);
+      matrix.row(data.index, data.row, data.number);
+    });
+    socket.on('mxCol', function(data) {
+      console.log(data);
+      matrix.column(data.index, data.col, data.number);
+    });
+    socket.on('mxDraw', function(data) {
+      console.log(data);
+      matrix.draw(data.index, data.char);
+    });
   });
 });

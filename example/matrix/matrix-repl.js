@@ -37,11 +37,11 @@ board.on('ready', function() {
       matrix.led(i, row, col, state);
     },
     row: function(i, row, num) {
-      console.log('第' + i + '台\nrow：' + row + ',狀態：' + state);
+      console.log('第' + i + '台\nrow：' + row);
       matrix.row(i, row, num);
     },
     column: function(i, col, num) {
-      console.log('第' + i + '台\ncol：' + col + ',狀態：' + state);
+      console.log('第' + i + '台\ncol：' + col);
       matrix.column(i, col, num);
     },
     draw: function(i, char) {
