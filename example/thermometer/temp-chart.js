@@ -14,22 +14,24 @@ var sio = io(server);
 
 var timeArray = [];
 var tempArray = [];
+// Highcharts資料集必須用陣列，故宣告溫度與時間陣列
 
 board.on('ready', function() {
   var temperature = new five.Thermometer({
-    controller: 'LM35',
-    pin: 'A0',
-    freq: 3000,
+    controller: 'LM35', //設定感測器元件
+    pin: 'A0', //設定輸入類比腳
+    freq: 3000, //設定三秒取一次溫度值
   });
 
   sio.on('connection', function(socket) {
     temperature.on('data', function() {
       // console.log(this.celsius + '°C');
-      temp = this.celsius;
+      temp = this.celsius; // 取得目前環境攝氏溫度
       tempArray.push(temp);
       tArr = getTime();
       console.log(tempArray, tArr);
       socket.emit('startTemp', {
+        // 發送給 Client startTemp事件
         temp: tempArray,
         time: tArr,
       });
@@ -52,12 +54,9 @@ board.on('ready', function() {
 
       dateTime = { year: y, mon: m, day: d, h: h, min: min, sec: s };
       timeStr = h + ':' + min + ':' + s;
-      // console.log(timeStr);
+
       timeArray.push(timeStr);
 
-      // var t = setTimeout(getTime, 1000);
-      // console.log(timeArray);
-      // return dateTime;
       return timeArray;
     }
     function checkTime(i) {
@@ -66,6 +65,5 @@ board.on('ready', function() {
       } // add zero in front of numbers < 10
       return i;
     }
-    // getTime();
   });
 });
