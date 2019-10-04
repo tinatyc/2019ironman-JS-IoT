@@ -5,7 +5,7 @@ board.on('ready', function() {
   // new 一個 Johnny-Five Sensor 物件，宣告為 photoresistor
   photoresistor = new five.Sensor({
     pin: 'A0',
-    freq: 500,
+    freq: 250,
   });
 
   photoresistor.on('data', function() {
