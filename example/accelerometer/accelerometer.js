@@ -4,10 +4,6 @@ var board = new five.Board();
 board.on('ready', function() {
   var accelerometer = new five.Accelerometer({
     controller: 'ADXL345',
-    // Optionally set the range to one of
-    // 2, 4, 8, 16 (±g)
-    // Defaults to ±2g
-    // range: ...
   });
 
   accelerometer.on('change', () => {
