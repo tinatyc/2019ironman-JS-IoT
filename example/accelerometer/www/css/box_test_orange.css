@@ -1,0 +1,15 @@
+.fba_o,
+.tbo_o,
+.lr_o{display:block;width:20px;height:20px;transform-style:preserve-3d;position:absolute;margin-top:-15px;}
+.fba_o:before,
+.fba_o:after,
+.tbo_o:before,
+.tbo_o:after,
+.lr_o:after,
+.lr_o:before{display:block;width:20px;height:20px;position:absolute;transform-style:preserve-3d;margin:1px;outline:1px solid hsla(20, 100%, 43%, 1);}
+.fba_o:before{transform:translateZ(11px);background-color:#cd5e3c80;content:' ';}
+.fba_o:after{transform:rotateY(180deg) translateZ(11px);background-color:#cd5e3c80;content:' ';}
+.tbo_o:before{transform:rotateX(90deg) translateZ(11px);background-color:#cd5e3c80;content:' ';}
+.tbo_o:after{transform:rotateX(270deg) translateZ(11px);background-color:#cd5e3c80;content:' ';}
+.lr_o:before{transform:rotateY(270deg) translateZ(11px);background-color:#cd5e3c80;content:' ';}
+.lr_o:after{transform:rotateY(90deg) translateZ(11px);background-color:#cd5e3c80;content:' ';}
