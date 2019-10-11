@@ -2,10 +2,32 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="css/index.css" />
     <title>Document</title>
   </head>
   <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-4"><p>x:<span class="xAxis"></span></p></div>
+        <div class="col-4"><p>y:<span class="yAxis"></span></p></div>
+        <div class="col-4"><p>z:<span class="zAxis"></span></p></div>
+      </div>
+      <div class="row">
+        <div class="col-4"><p>pitch:<span class="pitch"></p></div>
+        <div class="col-4"><p>roll:<span class="roll"></p></div>
+        <div class="col-4"><p>inclination:<span class="inclination"></p></div>
+      </div>
+      <div class="row">
+        <div class="col-4"><p>acceleration:<span class="acceleration"></span></p></div>
+        <div class="col-4"><p>orientation:<span class="orientation"></span></p></div>
+      </div>
+    </div>
     <div class="space3d">
       <div class="box">
         <div class="front">F</div>
@@ -16,5 +38,8 @@
         <div class="right">R</div>
       </div>
     </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>

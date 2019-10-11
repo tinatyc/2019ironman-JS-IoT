@@ -20,8 +20,8 @@ body {
   top: 25%;
   perspective: 0px;
   transform-style: preserve-3d;
-  transition: 2s;
-  transform: rotateX(45deg) rotateY(0deg) rotateZ(40deg);
+  transition: 1s;
+  /* transform: rotateX(45deg) rotateY(0deg) rotateZ(40deg); */
 }
 .box {
   width: 100px;
