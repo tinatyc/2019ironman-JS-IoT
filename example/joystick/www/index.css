@@ -1,0 +1,56 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.bg {
+  position: relative;
+  width: 100vw;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.top {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: url('img/background.jpg');
+  background-repeat: no-repeat;
+  background-origin: border-box;
+  background-position: center;
+  background-size: cover;
+}
+.bear {
+  position: absolute;
+  width: 100px;
+  height: auto;
+  /* top: 0; */
+  left: 50%;
+  transition-duration: 0.5s;
+}
+.footer {
+  position: absolute;
+  width: 100vw;
+  height: auto;
+  top: 70%;
+  left: 0%;
+}
+
+.bell {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  margin: 1px;
+  padding: 1px;
+  background-color: #b1b1b14f;
+  border-radius: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
