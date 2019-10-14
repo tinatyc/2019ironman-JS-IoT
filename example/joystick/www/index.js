@@ -1,6 +1,7 @@
 var socket = io.connect();
-var xCenter = $('.bg').width() / 2;
-var yCenter = $('.bg').height() / 2;
+
+var xCenter = $('.bg').width() / 2; // 取得水平中心點
+var yCenter = $('.bg').height() / 2; // 取得垂直中心點
 
 socket.on('startData', function(data) {
   // 當socket開始連線時，接收資料
@@ -11,10 +12,10 @@ socket.on('startData', function(data) {
   YVal = YAxis.toFixed(2);
 
   varXVal = XVal * xCenter;
-  bearXPos = xCenter - varXVal;
+  bearXPos = xCenter + varXVal;
 
   varYVal = YVal * yCenter;
-  bearYPos = yCenter - varYVal;
+  bearYPos = yCenter + varYVal;
   $('.bear').css(
     'transform',
     'translate(' + bearXPos + 'px, ' + bearYPos + 'px',
