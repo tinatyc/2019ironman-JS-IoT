@@ -31,8 +31,8 @@ body {
   position: absolute;
   width: 100px;
   height: auto;
-  /* top: 0; */
-  left: 50%;
+  /* top: 0px;
+  left: 0px; */
   transition-duration: 0.5s;
 }
 .footer {
