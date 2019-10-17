@@ -11,11 +11,12 @@ _PS:有錯歡迎發issue糾正我，感謝大家: )_
 
 [IoT沒那麼難！新手用JavaScript入門做自己的玩具](https://ithelp.ithome.com.tw/users/20103130/ironman/2125)  
 
-#### Johnny-Five - REPL Mode
+### Johnny-Five - REPL Mode
 - [Day 6 - REPL 模式](https://ithelp.ithome.com.tw/articles/10218528)  
 
   - File Path：[/example/repl/repl.js](https://github.com/tinatyc/2019ironman-JS-IoT/blob/master/example/repl/repl.js)
 
+### LED
 #### LED - API  
   - [Day 7 - LED](https://ithelp.ithome.com.tw/articles/10218944)  
     - File Path：[/example/led/blink.js](https://github.com/tinatyc/2019ironman-JS-IoT/blob/master/example/led/blink.js)   
@@ -29,14 +30,6 @@ _PS:有錯歡迎發issue糾正我，感謝大家: )_
   
   - [Day 10 - RGB LED 七彩霓虹燈](https://github.com/tinatyc/2019ironman-JS-IoT/blob/master/example/led/RGBLed-rainbow.js)  
   
-#### <sapn>Soket.io</span>  
-- [Day 11 - Socket.io & express 介紹](https://ithelp.ithome.com.tw/articles/10220895)  
-- [Day 12 - Socket.io & express 安裝](https://ithelp.ithome.com.tw/articles/10221363)  
-  
-  - Flie Path：[/example/socket/socket.js](https://github.com/tinatyc/2019ironman-JS-IoT/blob/master/example/socket/socket.js)   
-- [Day 13 - Socket.io 操控 Arduino 實作](https://ithelp.ithome.com.tw/articles/10221822)
-  -  Flie Path：[/example/socket/socket-iot.js](https://github.com/tinatyc/2019ironman-JS-IoT/blob/master/example/socket/socket-iot.js)
-  
 #### Led.Matrix-1  
 - [Day 14 - Matrix LED（矩陣式LED）](https://ithelp.ithome.com.tw/articles/10222299)  
   -  Flie Path：[/example/matrix/matrix.js](https://github.com/tinatyc/2019ironman-JS-IoT/blob/master/example/matrix/matrix.js)  
@@ -44,8 +37,16 @@ _PS:有錯歡迎發issue糾正我，感謝大家: )_
 - [Day 15 - Matrix LED（矩陣式LED）實作](https://ithelp.ithome.com.tw/articles/10222854)
   -  Flie Path：[/example/matrix/matrix-repl.js](https://github.com/tinatyc/2019ironman-JS-IoT/blob/master/example/matrix/matrix-repl.js)
 - [928教師節特輯 -  Muit matrix device](https://ithelp.ithome.com.tw/articles/10221470)
-  - Flie Path：[/example/matrix/matrix-muit-device.js](https://github.com/tinatyc/2019ironman-JS-IoT/blob/master/example/matrix/matrix-muit-device.js)  
+  - Flie Path：[/example/matrix/matrix-muit-device.js](https://github.com/tinatyc/2019ironman-JS-IoT/blob/master/example/matrix/matrix-muit-device.js)    
   
+### <sapn>Soket.io</span>  
+- [Day 11 - Socket.io & express 介紹](https://ithelp.ithome.com.tw/articles/10220895)  
+- [Day 12 - Socket.io & express 安裝](https://ithelp.ithome.com.tw/articles/10221363)  
+  
+  - Flie Path：[/example/socket/socket.js](https://github.com/tinatyc/2019ironman-JS-IoT/blob/master/example/socket/socket.js)   
+- [Day 13 - Socket.io 操控 Arduino 實作](https://ithelp.ithome.com.tw/articles/10221822)
+  -  Flie Path：[/example/socket/socket-iot.js](https://github.com/tinatyc/2019ironman-JS-IoT/blob/master/example/socket/socket-iot.js)
+    
 ### Sensor
 
 #### Thermometer
@@ -78,8 +79,10 @@ _PS:有錯歡迎發issue糾正我，感謝大家: )_
     - Flie Path：[/example/servo/servo.js](https://github.com/tinatyc/2019ironman-JS-IoT/blob/master/example/servo/servo.js)
   - [Day 27 - Servos 多個伺服馬達](https://ithelp.ithome.com.tw/articles/10227448)  
 
-## Joystick 搖桿
+### Joystick 搖桿  
+
   - [Day 28 - Joystick 搖桿 簡介](https://ithelp.ithome.com.tw/articles/10227762)  
-    - Flie Path：[/example/joystick/joystick.js](https://github.com/tinatyc/2019ironman-JS-IoT/blob/master/example/joystick/joystick.js)
+    - Flie Path：[/example/joystick/joystick.js](https://github.com/tinatyc/2019ironman-JS-IoT/blob/master/example/joystick/joystick.js)  
+  
   - [Day 29 - Joystick 搖桿 小遊戲應用](https://ithelp.ithome.com.tw/articles/10228008)  
     - Flie Path：[/example/joystick/j-game.js](https://github.com/tinatyc/2019ironman-JS-IoT/blob/master/example/joystick/j-game.js)
