@@ -1,5 +1,7 @@
 # IoT沒那麼難！新手用JavaScript入門做自己的玩具
-King Tzeng - 第 11 屆 iT 邦幫忙鐵人賽 挑戰
+> King Tzeng - 第 11 屆 iT 邦幫忙鐵人賽 挑戰  
+> 
+![](https://github.com/tinatyc/2019ironman-JS-IoT/blob/master/gif/Acc-Box.gif?raw=true)  
 
 ## 簡介
 這是我第四次挑戰 iT 邦幫忙鐵人賽(๑´ㅁ`)   
@@ -70,12 +72,14 @@ _PS:有錯歡迎發issue糾正我，感謝大家: )_
 #### Accelerometer 三軸加速度計
   - [Day 23 - Accelerometer 三軸加速度計](https://ithelp.ithome.com.tw/articles/10226147)
   - [Day 24 - Accelerometer 三軸加速度計 實作](https://ithelp.ithome.com.tw/articles/10226434)  
+  
     - Flie Path：[/example/accelerometer/accelerometer.js](https://github.com/tinatyc/2019ironman-JS-IoT/blob/master/example/accelerometer/accelerometer.js)  
   - [Day 25 - Accelerometer 三軸加速度計 應用](https://ithelp.ithome.com.tw/articles/10226894)  
     - Flie Path：[/example/accelerometer/acc-box.js](https://github.com/tinatyc/2019ironman-JS-IoT/blob/master/example/accelerometer/acc-box.js)  
 
 ### Servo  
-  - [Day 26 - Servo 伺服馬達 簡介](https://ithelp.ithome.com.tw/articles/10227218)  
+  - [Day 26 - Servo 伺服馬達 簡介](https://ithelp.ithome.com.tw/articles/10227218)
+  
     - Flie Path：[/example/servo/servo.js](https://github.com/tinatyc/2019ironman-JS-IoT/blob/master/example/servo/servo.js)
   - [Day 27 - Servos 多個伺服馬達](https://ithelp.ithome.com.tw/articles/10227448)  
 
