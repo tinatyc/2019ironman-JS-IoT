@@ -1,31 +1,30 @@
 var five = require('johnny-five');
 var board = new five.Board();
 
-board.on('ready', function() {
+board.on('ready', function () {
   var led = new five.Led(13);
 
   console.log('REPL Ready!');
-
   this.repl.inject({
-    on: function() {
+    on: function () {
       console.log('打開LED囉～');
       led.stop();
       led.on();
     },
-    off: function() {
+    off: function () {
       console.log('關掉LED');
       led.stop();
       led.off();
     },
-    stop: function() {
+    stop: function () {
       console.log('stop');
       led.stop();
     },
-    blink: function() {
+    blink: function () {
       console.log('LED閃～閃～');
       led.blink(500);
     },
-    toggle: function() {
+    toggle: function () {
       console.log('交換狀態');
       led.toggle();
     },
